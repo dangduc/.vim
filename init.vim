@@ -104,24 +104,28 @@ nmap <C-\> :vsp<CR>
 " Plugin-Specific Configurations
 " ---------------------------------------------------------------------
 
+let g:python_host_prog = '/Users/dunguyen/.pyenv/versions/neovim2/bin/python'
+
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " ---------------------------------------------------------------------
 
 " theming
-"let g:seoul256_background=235
+let g:seoul256_background=235
 "let g:seoul256_background=252
-colorscheme seoul256-light
+"colorscheme seoul256-light
+colorscheme seoul256
 let g:airline_theme='zenburn'
 
 " fzf
@@ -129,6 +133,11 @@ set rtp+=~/.fzf
 nmap <C-N> :Buffers<CR>
 nmap <C-M> :Files<CR>
 nmap <C-O> :Ag<CR>
+
+
+" nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " ---------------------------------------------------------------------
 " System-specific Configurations
