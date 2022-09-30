@@ -85,7 +85,7 @@ set listchars=tab:┄→
 " use system clipboard instead of vim yank registers
 " normal-mode y(ie, copy) d(ie, cut) p(ie, paste) works interchangeably/interoperatively with cmd-c, cmd-x, cmd-p.
 " (see: http://vim.wikia.com/wiki/Accessing_the_system_clipboard)
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " add vertical line at 80 chars out
 set colorcolumn=80
